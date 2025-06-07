@@ -191,7 +191,6 @@
                                     <th class="px-4 py-3">Tanggal</th>
                                     <th class="px-4 py-3">Waktu</th>
                                     <th class="px-4 py-3">Petugas</th>
-                                    <th class="px-4 py-3">Area</th>
                                     <th class="px-4 py-3 text-center">Status</th>
                                 </tr>
                             </thead>
@@ -204,14 +203,11 @@
                                     <td class="px-4 py-3">
                                         <span class="badge bg-light text-dark px-3 py-2">
                                             <i class="fas fa-clock me-1"></i>
-                                            {{ $schedule->time }}
+                                            {{ $schedule->start_time }} - {{ $schedule->end_time }}
                                         </span>
                                     </td>
                                     <td class="px-4 py-3 fw-medium">
                                         {{ $schedule->resident->name }}
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        {{ $schedule->area }}
                                     </td>
                                     <td class="px-4 py-3 text-center">
                                         @if($schedule->date->isToday())
@@ -227,7 +223,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="5" class="text-center py-4 text-muted">
+                                    <td colspan="4" class="text-center py-4 text-muted">
                                         <i class="fas fa-exclamation-circle me-2"></i> Belum ada jadwal ronda terdekat
                                     </td>
                                 </tr>
